@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<databaseChangeLog  
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+	<property dbms="oracle" name="pk-column.type" value="NUMBER(20)"/>
+	<property dbms="oracle" name="json-column.type" value="CLOB"/>
+	<property dbms="oracle" name="aggregate-assist-column.type" value="VARCHAR2(1024)"/>
+	<property dbms="oracle" name="version-column.type" value="NUMBER(8)"/>
+	<property dbms="oracle" name="tenant-column.type" value="VARCHAR2(32)"/>
+	<property dbms="oracle" name="audit-column.type" value="DATE"/>
+	<property dbms="oracle" name="sequence.type" value="NUMBER(30)"/>
+	<property dbms="oracle" name="number.type" value="NUMBER(32,6)"/>
+	<property dbms="oracle" name="unsigned.type" value="NUMBER(32,6)"/>
+	<property dbms="oracle" name="text.type" value="VARCHAR2(255)"/>
+	<property dbms="oracle" name="address.type" value="VARCHAR2(1024)"/>
+	<property dbms="oracle" name="continent.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="region.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="country.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="province.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="city.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="district.type" value="VARCHAR2(255)"/>
+	<property dbms="oracle" name="road.type" value="VARCHAR2(255)"/>
+	<property dbms="oracle" name="community.type" value="VARCHAR2(100)"/>
+	<property dbms="oracle" name="floor.type" value="NUMBER(5)"/>
+	<property dbms="oracle" name="residence-type.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="residential-area.type" value="NUMBER(10,2)"/>
+	<property dbms="oracle" name="email.type" value="VARCHAR2(100)"/>
+	<property dbms="oracle" name="phone.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="mobile.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="fax.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="datetime.type" value="DATE"/>
+	<property dbms="oracle" name="full-datetime.type" value="DATE"/>
+	<property dbms="oracle" name="date.type" value="DATE"/>
+	<property dbms="oracle" name="time.type" value="DATE"/>
+	<property dbms="oracle" name="year.type" value="NUMBER(5)"/>
+	<property dbms="oracle" name="half-year.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="quarter.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="half-month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="ten-days.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="week-of-year.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="week-of-month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="half-week.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="day-of-month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="day-of-week.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="day-kind.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="hour.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="hour-kind.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="minute.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="second.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="millisecond.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="am-pm.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="gender.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="occupation.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="date-of-birth.type" value="DATE"/>
+	<property dbms="oracle" name="age.type" value="NUMBER(5)"/>
+	<property dbms="oracle" name="id-no.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="religion.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="nationality.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="biz-trade.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="biz-scale.type" value="NUMBER(9)"/>
+	<property dbms="oracle" name="boolean.type" value="VARCHAR2(5)"/>
+	<property dbms="oracle" name="enum.type" value="VARCHAR2(20)"/>
+	<property dbms="oracle" name="object.type" value="CLOB"/>
+	<property dbms="oracle" name="array.type" value="CLOB"/>
+	<property dbms="mysql" name="pk-column.type" value="BIGINT"/>
+	<property dbms="mysql" name="json-column.type" value="JSON"/>
+	<property dbms="mysql" name="aggregate-assist-column.type" value="JSON"/>
+	<property dbms="mysql" name="version-column.type" value="INT"/>
+	<property dbms="mysql" name="tenant-column.type" value="VARCHAR(32)"/>
+	<property dbms="mysql" name="audit-column.type" value="DATETIME"/>
+	<property dbms="mysql" name="sequence.type" value="BIGINT"/>
+	<property dbms="mysql" name="number.type" value="DECIMAL(32,6)"/>
+	<property dbms="mysql" name="unsigned.type" value="DECIMAL(32,6)"/>
+	<property dbms="mysql" name="text.type" value="VARCHAR(255)"/>
+	<property dbms="mysql" name="address.type" value="TEXT"/>
+	<property dbms="mysql" name="continent.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="region.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="country.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="province.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="city.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="district.type" value="VARCHAR(255)"/>
+	<property dbms="mysql" name="road.type" value="VARCHAR(255)"/>
+	<property dbms="mysql" name="community.type" value="VARCHAR(100)"/>
+	<property dbms="mysql" name="floor.type" value="SMALLINT"/>
+	<property dbms="mysql" name="residence-type.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="residential-area.type" value="DECIMAL(10,2)"/>
+	<property dbms="mysql" name="email.type" value="VARCHAR(100)"/>
+	<property dbms="mysql" name="phone.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="mobile.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="fax.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="datetime.type" value="DATETIME"/>
+	<property dbms="mysql" name="full-datetime.type" value="DATETIME"/>
+	<property dbms="mysql" name="date.type" value="DATE"/>
+	<property dbms="mysql" name="time.type" value="TIME"/>
+	<property dbms="mysql" name="year.type" value="SMALLINT"/>
+	<property dbms="mysql" name="half-year.type" value="TINYINT"/>
+	<property dbms="mysql" name="quarter.type" value="TINYINT"/>
+	<property dbms="mysql" name="month.type" value="TINYINT"/>
+	<property dbms="mysql" name="half-month.type" value="TINYINT"/>
+	<property dbms="mysql" name="ten-days.type" value="TINYINT"/>
+	<property dbms="mysql" name="week-of-year.type" value="TINYINT"/>
+	<property dbms="mysql" name="week-of-month.type" value="TINYINT"/>
+	<property dbms="mysql" name="half-week.type" value="TINYINT"/>
+	<property dbms="mysql" name="day-of-month.type" value="TINYINT"/>
+	<property dbms="mysql" name="day-of-week.type" value="TINYINT"/>
+	<property dbms="mysql" name="day-kind.type" value="TINYINT"/>
+	<property dbms="mysql" name="hour.type" value="TINYINT"/>
+	<property dbms="mysql" name="hour-kind.type" value="TINYINT"/>
+	<property dbms="mysql" name="minute.type" value="TINYINT"/>
+	<property dbms="mysql" name="second.type" value="TINYINT"/>
+	<property dbms="mysql" name="millisecond.type" value="TINYINT"/>
+	<property dbms="mysql" name="am-pm.type" value="TINYINT"/>
+	<property dbms="mysql" name="gender.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="occupation.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="date-of-birth.type" value="DATE"/>
+	<property dbms="mysql" name="age.type" value="SMALLINT"/>
+	<property dbms="mysql" name="id-no.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="religion.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="nationality.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="biz-trade.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="biz-scale.type" value="INT"/>
+	<property dbms="mysql" name="boolean.type" value="VARCHAR(5)"/>
+	<property dbms="mysql" name="enum.type" value="VARCHAR(20)"/>
+	<property dbms="mysql" name="object.type" value="JSON"/>
+	<property dbms="mysql" name="array.type" value="JSON"/>
+	<changeSet id="6f0a1c51-ce8b-4fcb-86b9-3d7bdb94ce14" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="topic_pipeline_monitor_summary"/>
+			</not>
+        </preConditions>
+        <createTable tableName="topic_pipeline_monitor_summary">
+			<column name="id_" type="${pk-column.type}">
+				<constraints primaryKey="true"/>
+			</column>
+			<column name="completetimemax" type="${millisecond.type}"/>
+			<column name="count" type="${number.type}"/>
+			<column name="error_count" type="${number.type}"/>
+			<column name="pipeline_name" type="${text.type}"/>
+			<column name="pipeline_topic_name" type="${text.type}"/>
+			<column name="pipelineid" type="${text.type}"/>
+			<column name="status" type="${text.type}"/>
+			<column name="success_count" type="${number.type}"/>
+			<column name="aggregate_assist_" type="${aggregate-assist-column.type}"/>
+			<column name="version_" type="${version-column.type}"/>
+			<column name="tenant_id_" type="${tenant-column.type}"/>
+			<column name="insert_time_" type="${audit-column.type}"/>
+			<column name="update_time_" type="${audit-column.type}"/>
+        </createTable>
+	</changeSet>
+	
+	<!-- add or modify columns -->
+	<!-- add completetimemax when column not exists -->
+	<changeSet id="2783ca0e-edbd-4d6a-a6c3-7faca7f17e08" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'completetimemax'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'completetimemax'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="completetimemax" type="${millisecond.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify completetimemax when column exists -->
+    <changeSet id="b6b2155c-8522-4030-8cce-b6ae0eb9fbc1" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'completetimemax'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'completetimemax'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="completetimemax" newDataType="${millisecond.type}"/>
+    </changSet>
+	<!-- add count when column not exists -->
+	<changeSet id="3d9d238f-8bb5-41ae-8b0d-2e978ab9a4c9" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'count'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'count'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="count" type="${number.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify count when column exists -->
+    <changeSet id="4041e997-654e-488e-b014-4554055f3c54" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'count'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'count'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="count" newDataType="${number.type}"/>
+    </changSet>
+	<!-- add error_count when column not exists -->
+	<changeSet id="3bffeb15-b1a0-4db5-a9f1-13b0362e5577" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'error_count'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'error_count'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="error_count" type="${number.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify error_count when column exists -->
+    <changeSet id="9bb78db6-192b-4382-b82c-a13c38f59137" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'error_count'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'error_count'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="error_count" newDataType="${number.type}"/>
+    </changSet>
+	<!-- add pipeline_name when column not exists -->
+	<changeSet id="126c02f4-c5be-455a-bb3d-29cf2102e14d" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipeline_name'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipeline_name'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="pipeline_name" type="${text.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify pipeline_name when column exists -->
+    <changeSet id="1bc54198-4cc4-4668-810b-5251deae2c89" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipeline_name'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipeline_name'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="pipeline_name" newDataType="${text.type}"/>
+    </changSet>
+	<!-- add pipeline_topic_name when column not exists -->
+	<changeSet id="6641b1c9-1839-4587-8353-f520340b3c7c" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipeline_topic_name'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipeline_topic_name'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="pipeline_topic_name" type="${text.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify pipeline_topic_name when column exists -->
+    <changeSet id="ca91d691-3522-4244-af7c-46386ded0c08" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipeline_topic_name'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipeline_topic_name'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="pipeline_topic_name" newDataType="${text.type}"/>
+    </changSet>
+	<!-- add pipelineid when column not exists -->
+	<changeSet id="8014443c-61f2-49d7-9b42-16a27055f375" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="pipelineid" type="${text.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify pipelineid when column exists -->
+    <changeSet id="36db9723-c804-4349-9f20-774efba10985" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="pipelineid" newDataType="${text.type}"/>
+    </changSet>
+	<!-- add status when column not exists -->
+	<changeSet id="d969937b-0fab-4775-a349-dcbd0be04dac" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'status'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'status'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="status" type="${text.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify status when column exists -->
+    <changeSet id="91b9f4c4-2c95-4742-a3b4-6cad71496a28" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'status'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'status'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="status" newDataType="${text.type}"/>
+    </changSet>
+	<!-- add success_count when column not exists -->
+	<changeSet id="6c6aa6b6-5938-49ad-bfe2-b4a78723a6e8" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'success_count'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'success_count'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="success_count" type="${number.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify success_count when column exists -->
+    <changeSet id="007f5c40-0037-4e9c-acb8-d08247f3ad6d" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'success_count'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'success_count'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="success_count" newDataType="${number.type}"/>
+    </changSet>
+	<!-- add aggregate_assist_ when column not exists -->
+	<changeSet id="326ead49-548b-47f6-8ade-7f1e1b1be2f5" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'aggregate_assist_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'aggregate_assist_'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="aggregate_assist_" type="${aggregate-assist-column.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify aggregate_assist_ when column exists -->
+    <changeSet id="4335dc70-40cd-43d1-8318-99d1c608ba4b" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'aggregate_assist_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'aggregate_assist_'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="aggregate_assist_" newDataType="${aggregate-assist-column.type}"/>
+    </changSet>
+	<!-- add version_ when column not exists -->
+	<changeSet id="8317d12b-236f-4299-a103-0b0d3becd2ae" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'version_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'version_'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="version_" type="${version-column.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify version_ when column exists -->
+    <changeSet id="1ae31aec-6642-48f2-947d-76cd1887568a" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'version_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'version_'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="version_" newDataType="${version-column.type}"/>
+    </changSet>
+	<!-- add tenant_id_ when column not exists -->
+	<changeSet id="74682fa5-8c58-4fc4-85ae-93ee2609e5bc" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="tenant_id_" type="${tenant-column.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify tenant_id_ when column exists -->
+    <changeSet id="58b2f982-ab01-41c0-ae12-e2ab2b391525" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="tenant_id_" newDataType="${tenant-column.type}"/>
+    </changSet>
+	<!-- add insert_time_ when column not exists -->
+	<changeSet id="4747e30b-7f83-4d42-bd31-d23e2facbeeb" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="insert_time_" type="${audit-column.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify insert_time_ when column exists -->
+    <changeSet id="c3af15db-f0a7-48c0-9b2d-eba1a597fdbd" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="insert_time_" newDataType="${audit-column.type}"/>
+    </changSet>
+	<!-- add update_time_ when column not exists -->
+	<changeSet id="912f7653-0dda-47c1-ba32-057e03e51ddb" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+        </preConditions>
+        <addColumn tableName="topic_pipeline_monitor_summary">
+        	<column name="update_time_" type="${audit-column.type}"/>
+		</addColumn>
+    </changSet>
+    <!-- modify update_time_ when column exists -->
+    <changeSet id="77304afa-876d-4cac-9294-ec760258c89c" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<dbms type="mysql"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+        </preConditions>
+		<preConditions onFail="MARK_RAN">
+			<dbms type="oracle"/>
+			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+        </preConditions>
+        <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="update_time_" newDataType="${audit-column.type}"/>
+    </changSet>
+	
+	<!-- drop exists indexes and add new indexes -->
+	<changeSet id="07035d48-5431-4904-bf46-8443da3e1a6d" author="watchmen">
+		<!-- simply change the following sql of pre-conditions to "SELECT 0 FROM DUAL" to drop all exists indexes. -->
+		<!-- considering performance of rebuild indexes, manually drop useless indexes accurate is recommended. -->
+		<!-- according to duplication check of index names, following create scripts need to be adjusted manually as well. -->
+		<preConditions onFail="MARK_RAN">
+			<sqlCheck expectedResult="0">SELECT 1 FROM DUAL</sqlCheck>
+		</preConditions>
+		<createProcedure dbms="oracle" procedureName="SCHEMA_CHANGE">
+			CREATE OR REPLACE PROCEDURE SCHEMA_CHANGE AS
+				CURSOR cursorIndexes IS SELECT UI.INDEX_NAME
+					FROM USER_INDEXES UI
+					WHERE UI.TABLE_NAME = 'topic_pipeline_monitor_summary'
+                        AND NOT EXISTS (SELECT 1 FROM USER_CONSTRAINTS WHERE TABLE_NAME = 'topic_pipeline_monitor_summary' AND CONSTRAINT_TYPE = 'P' AND CONSTRAINT_NAME = UI.INDEX_NAME);
+			BEGIN
+				-- drop existed indexes
+				FOR anIndex in cursorIndexes LOOP
+					EXECUTE IMMEDIATE CONCAT('DROP INDEX ', anIndex.INDEX_NAME);
+				END LOOP;
+			END;
+		</createProcedure>
+		<createProcedure dbms="mysql" procedureName="SCHEMA_CHANGE">
+			DELIMITER $$
+			CREATE PROCEDURE SCHEMA_CHANGE() 
+			BEGIN 
+				-- drop existed indexes
+				SELECT INDEX_NAME INTO @indexName FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND INDEX_NAME <> 'PRIMARY' LIMIT 1;
+				WHILE @indexName IS NOT NULL DO
+				    SET @sql = concat('DROP INDEX ', @indexName, ' ON topic_pipeline_monitor_summary;');
+					PREPARE stmt FROM @sql;
+					EXECUTE stmt;
+					DEALLOCATE PREPARE stmt;
+					SELECT INDEX_NAME INTO @indexName FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND INDEX_NAME <> 'PRIMARY' LIMIT 1;
+				END WHILE;
+			END $$
+			DELIMITER ;
+		</createProcedure>
+		<sql dbms="oracle">CALL SCHEMA_CHANGE();</sql>
+		<sql dbms="mysql">CALL `SCHEMA_CHANGE`();</sql>
+		<dropProcedure procedureName="SCHEMA_CHANGE"/>
+	</changeSet>
+	<changeSet id="6defc57a-9bf2-4a55-889a-61b0d0e46a18" author="watchmen">
+
+
+		<createIndex indexName="i_pipeline_monitor_summary_tenant_id_" table="topic_pipeline_monitor_summary">
+			<column name="tenant_id_"/>
+		</createIndex>
+		<createIndex indexName="i_pipeline_monitor_summary_insert_time_" table="topic_pipeline_monitor_summary">
+			<column name="insert_time_"/>
+		</createIndex>
+		<createIndex indexName="i_pipeline_monitor_summary_update_time_" table="topic_pipeline_monitor_summary">
+			<column name="update_time_"/>
+		</createIndex>
+	</changeSet>
+</databaseChangeLog>
