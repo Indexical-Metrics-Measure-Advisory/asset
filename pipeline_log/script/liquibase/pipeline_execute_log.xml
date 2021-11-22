@@ -125,7 +125,7 @@
 	<property dbms="mysql" name="enum.type" value="VARCHAR(20)"/>
 	<property dbms="mysql" name="object.type" value="JSON"/>
 	<property dbms="mysql" name="array.type" value="JSON"/>
-	<changeSet id="93611ce4-e0ce-45b7-bcf0-fa56e60359db" author="watchmen">
+	<changeSet id="85cbb397-d49b-4df7-8e6b-926ceee9103e" author="watchmen">
 		<preConditions onFail="MARK_RAN">
 			<not>
 				<tableExists tableName="topic_pipeline_execute_log"/>
@@ -149,192 +149,262 @@
 	
 	<!-- add or modify columns -->
 	<!-- add completetime when column not exists -->
-	<changeSet id="f1e35276-f135-4f15-adf9-ce32b08c8b9c" author="watchmen">
+	<changeSet id="fc0b003b-a298-43ac-a8fa-526f3b59bdca" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'completetime'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'completetime'</sqlCheck>
-        </preConditions>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'completetime'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'completetime'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="completetime" type="${number.type}"/>
 		</addColumn>
     </changSet>
     <!-- modify completetime when column exists -->
-    <changeSet id="1e0cfc82-80cf-4e37-92c0-3221eccba3ec" author="watchmen">
+    <changeSet id="4c62938c-e2fb-4d73-bde3-c669fb185a1e" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'completetime'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'completetime'</sqlCheck>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'completetime'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'completetime'</sqlCheck>
+				</and>
+			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="completetime" newDataType="${number.type}"/>
     </changSet>
 	<!-- add pipelineid when column not exists -->
-	<changeSet id="f434661f-9f9b-4c5d-9aff-608f614b1139" author="watchmen">
+	<changeSet id="2c3bb2bb-e74f-42d4-b20b-52c19f3851ff" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
-        </preConditions>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="pipelineid" type="${sequence.type}"/>
 		</addColumn>
     </changSet>
     <!-- modify pipelineid when column exists -->
-    <changeSet id="b3fe9ea0-9780-4441-9af0-a35caebf5f13" author="watchmen">
+    <changeSet id="d48ed057-2eb6-43d0-baaf-c4bcc926fde5" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelineid'</sqlCheck>
+				</and>
+			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="pipelineid" newDataType="${sequence.type}"/>
     </changSet>
 	<!-- add pipelinename when column not exists -->
-	<changeSet id="04baaf76-21d5-41e6-89f5-477ac2440cff" author="watchmen">
+	<changeSet id="eb3dd766-9b98-45d4-a5a7-b48c5afaad70" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinename'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinename'</sqlCheck>
-        </preConditions>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinename'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinename'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="pipelinename" type="${text.type}"/>
 		</addColumn>
     </changSet>
     <!-- modify pipelinename when column exists -->
-    <changeSet id="93c2a322-9886-475c-b16e-47771f92f449" author="watchmen">
+    <changeSet id="53aee531-46e2-42dd-9ac8-01a81eb25139" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinename'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinename'</sqlCheck>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinename'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinename'</sqlCheck>
+				</and>
+			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="pipelinename" newDataType="${text.type}"/>
     </changSet>
 	<!-- add pipelinetopicname when column not exists -->
-	<changeSet id="dc9f283f-00ce-462f-b290-a4986d6dad63" author="watchmen">
+	<changeSet id="eb5d91e5-0dfb-4f67-8813-50f34b0d6853" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinetopicname'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinetopicname'</sqlCheck>
-        </preConditions>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinetopicname'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinetopicname'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="pipelinetopicname" type="${text.type}"/>
 		</addColumn>
     </changSet>
     <!-- modify pipelinetopicname when column exists -->
-    <changeSet id="18efa3d1-9f16-4142-8c9f-707a66ebbaba" author="watchmen">
+    <changeSet id="8d0a69b7-9630-49da-bf66-7311e416c345" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinetopicname'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinetopicname'</sqlCheck>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinetopicname'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'pipelinetopicname'</sqlCheck>
+				</and>
+			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="pipelinetopicname" newDataType="${text.type}"/>
     </changSet>
 
 
 	<!-- add tenant_id_ when column not exists -->
-	<changeSet id="1129d3b4-435f-40d9-b71f-7512fa752ddc" author="watchmen">
+	<changeSet id="c3f674d5-b5e2-4ab2-83d0-d88dfc5725a6" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
-        </preConditions>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="tenant_id_" type="${tenant-column.type}"/>
 		</addColumn>
     </changSet>
     <!-- modify tenant_id_ when column exists -->
-    <changeSet id="6257535e-3d3a-423e-a4c4-2699059c5669" author="watchmen">
+    <changeSet id="bf5a8591-c27f-4316-b914-eeb4fb04a1df" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="tenant_id_" newDataType="${tenant-column.type}"/>
     </changSet>
 	<!-- add insert_time_ when column not exists -->
-	<changeSet id="7c1dc8a1-c9be-41d4-a714-954e57e8b3de" author="watchmen">
+	<changeSet id="2c25a715-99e4-4f37-878e-a1deb2939668" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
-        </preConditions>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="insert_time_" type="${audit-column.type}"/>
 		</addColumn>
     </changSet>
     <!-- modify insert_time_ when column exists -->
-    <changeSet id="26334e9a-63f5-4c04-bc4f-ad9b6c047feb" author="watchmen">
+    <changeSet id="b1e8a5dd-8494-4028-bb17-a9cb03629e97" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="insert_time_" newDataType="${audit-column.type}"/>
     </changSet>
 	<!-- add update_time_ when column not exists -->
-	<changeSet id="e6426bdd-938c-4fcd-8187-085aa751c428" author="watchmen">
+	<changeSet id="68f1de13-698d-476d-8082-7208600a94c6" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'update_time_'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'update_time_'</sqlCheck>
-        </preConditions>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="update_time_" type="${audit-column.type}"/>
 		</addColumn>
     </changSet>
     <!-- modify update_time_ when column exists -->
-    <changeSet id="d37d2d07-7d18-4ee0-ad61-4dc3676108bf" author="watchmen">
+    <changeSet id="a466947f-e4c4-4081-97df-5bb10f85fdef" author="watchmen">
 		<preConditions onFail="MARK_RAN">
-			<dbms type="mysql"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'update_time_'</sqlCheck>
-        </preConditions>
-		<preConditions onFail="MARK_RAN">
-			<dbms type="oracle"/>
-			<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_pipeline_execute_log' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="update_time_" newDataType="${audit-column.type}"/>
     </changSet>
 	
 	<!-- drop exists indexes and add new indexes -->
-	<changeSet id="d239022a-9cc2-4ce8-b5fe-9b3688292c44" author="watchmen">
+	<changeSet id="62fcc2d7-3c0b-49cc-9f63-66ecc54ebe81" author="watchmen">
 		<!-- simply change the following sql of pre-conditions to "SELECT 0 FROM DUAL" to drop all exists indexes. -->
 		<!-- considering performance of rebuild indexes, manually drop useless indexes accurate is recommended. -->
 		<!-- according to duplication check of index names, following create scripts need to be adjusted manually as well. -->
@@ -374,7 +444,7 @@
 		<sql dbms="mysql">CALL `SCHEMA_CHANGE`();</sql>
 		<dropProcedure procedureName="SCHEMA_CHANGE"/>
 	</changeSet>
-	<changeSet id="f1d99dd4-b8a3-483e-a696-8ce5f7537169" author="watchmen">
+	<changeSet id="57d3dbc5-d586-4b90-9cee-4cb5ca6f23b4" author="watchmen">
 
 
 		<createIndex indexName="i_pipeline_execute_log_tenant_id_" table="topic_pipeline_execute_log">
