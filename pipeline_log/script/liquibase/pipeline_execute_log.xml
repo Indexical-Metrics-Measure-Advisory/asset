@@ -167,7 +167,7 @@
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="completetime" type="${number.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify completetime when column exists -->
     <changeSet id="4c62938c-e2fb-4d73-bde3-c669fb185a1e" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -183,7 +183,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="completetime" newDataType="${number.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add pipelineid when column not exists -->
 	<changeSet id="2c3bb2bb-e74f-42d4-b20b-52c19f3851ff" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -203,7 +203,7 @@
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="pipelineid" type="${sequence.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify pipelineid when column exists -->
     <changeSet id="d48ed057-2eb6-43d0-baaf-c4bcc926fde5" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -219,7 +219,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="pipelineid" newDataType="${sequence.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add pipelinename when column not exists -->
 	<changeSet id="eb3dd766-9b98-45d4-a5a7-b48c5afaad70" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -239,7 +239,7 @@
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="pipelinename" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify pipelinename when column exists -->
     <changeSet id="53aee531-46e2-42dd-9ac8-01a81eb25139" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -255,7 +255,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="pipelinename" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add pipelinetopicname when column not exists -->
 	<changeSet id="eb5d91e5-0dfb-4f67-8813-50f34b0d6853" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -275,7 +275,7 @@
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="pipelinetopicname" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify pipelinetopicname when column exists -->
     <changeSet id="8d0a69b7-9630-49da-bf66-7311e416c345" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -291,7 +291,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="pipelinetopicname" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 
 
 	<!-- add tenant_id_ when column not exists -->
@@ -313,7 +313,7 @@
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="tenant_id_" type="${tenant-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify tenant_id_ when column exists -->
     <changeSet id="bf5a8591-c27f-4316-b914-eeb4fb04a1df" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -329,7 +329,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="tenant_id_" newDataType="${tenant-column.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add insert_time_ when column not exists -->
 	<changeSet id="2c25a715-99e4-4f37-878e-a1deb2939668" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -349,7 +349,7 @@
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="insert_time_" type="${audit-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify insert_time_ when column exists -->
     <changeSet id="b1e8a5dd-8494-4028-bb17-a9cb03629e97" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -365,7 +365,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="insert_time_" newDataType="${audit-column.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add update_time_ when column not exists -->
 	<changeSet id="68f1de13-698d-476d-8082-7208600a94c6" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -385,7 +385,7 @@
         <addColumn tableName="topic_pipeline_execute_log">
         	<column name="update_time_" type="${audit-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify update_time_ when column exists -->
     <changeSet id="a466947f-e4c4-4081-97df-5bb10f85fdef" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -401,7 +401,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_execute_log" columnName="update_time_" newDataType="${audit-column.type}"/>
-    </changSet>
+    </changeSet>
 	
 	<!-- drop exists indexes and add new indexes -->
 	<changeSet id="62fcc2d7-3c0b-49cc-9f63-66ecc54ebe81" author="watchmen">
@@ -424,7 +424,7 @@
 				END LOOP;
 			END;
 		</createProcedure>
-		<createProcedure dbms="mysql" procedureName="SCHEMA_CHANGE">
+		<createProcedure dbms="mysql" procedureName="SCHEMA_CHANGE"><![CDATA[
 			DELIMITER $$
 			CREATE PROCEDURE SCHEMA_CHANGE() 
 			BEGIN 
@@ -438,7 +438,7 @@
 					SELECT INDEX_NAME INTO @indexName FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_execute_log' AND INDEX_NAME <> 'PRIMARY' LIMIT 1;
 				END WHILE;
 			END $$
-			DELIMITER ;
+			DELIMITER ;]]>
 		</createProcedure>
 		<sql dbms="oracle">CALL SCHEMA_CHANGE();</sql>
 		<sql dbms="mysql">CALL `SCHEMA_CHANGE`();</sql>
@@ -447,13 +447,13 @@
 	<changeSet id="57d3dbc5-d586-4b90-9cee-4cb5ca6f23b4" author="watchmen">
 
 
-		<createIndex indexName="i_pipeline_execute_log_tenant_id_" table="topic_pipeline_execute_log">
+		<createIndex indexName="i_pipeline_execute_log_tenant_id_" tableName="topic_pipeline_execute_log">
 			<column name="tenant_id_"/>
 		</createIndex>
-		<createIndex indexName="i_pipeline_execute_log_insert_time_" table="topic_pipeline_execute_log">
+		<createIndex indexName="i_pipeline_execute_log_insert_time_" tableName="topic_pipeline_execute_log">
 			<column name="insert_time_"/>
 		</createIndex>
-		<createIndex indexName="i_pipeline_execute_log_update_time_" table="topic_pipeline_execute_log">
+		<createIndex indexName="i_pipeline_execute_log_update_time_" tableName="topic_pipeline_execute_log">
 			<column name="update_time_"/>
 		</createIndex>
 	</changeSet>

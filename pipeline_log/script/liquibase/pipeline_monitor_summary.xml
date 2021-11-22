@@ -171,7 +171,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="completetimemax" type="${millisecond.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify completetimemax when column exists -->
     <changeSet id="04e424c3-f76c-47b0-b0d5-018c2c2e65a6" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -187,7 +187,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="completetimemax" newDataType="${millisecond.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add count when column not exists -->
 	<changeSet id="e47210ce-44d5-4ee8-acc2-8bbb87e75948" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -207,7 +207,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="count" type="${number.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify count when column exists -->
     <changeSet id="258c4111-c43f-453f-87fa-829e570cac83" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -223,7 +223,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="count" newDataType="${number.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add error_count when column not exists -->
 	<changeSet id="ff66c00e-5179-4c1e-bf69-ff39869ea932" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -243,7 +243,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="error_count" type="${number.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify error_count when column exists -->
     <changeSet id="8d121bcb-7298-4418-b7eb-20562bc75d6d" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -259,7 +259,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="error_count" newDataType="${number.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add pipeline_name when column not exists -->
 	<changeSet id="cd06a197-f4e0-47e6-a6cf-c586d0a8e630" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -279,7 +279,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="pipeline_name" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify pipeline_name when column exists -->
     <changeSet id="26f597e2-e698-4225-91f6-7ee4c4f95101" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -295,7 +295,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="pipeline_name" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add pipeline_topic_name when column not exists -->
 	<changeSet id="8ddce7aa-9b8d-49a5-874b-ff9b4130a873" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -315,7 +315,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="pipeline_topic_name" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify pipeline_topic_name when column exists -->
     <changeSet id="da88c66e-05fb-45af-a9c4-fdeb12009c6d" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -331,7 +331,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="pipeline_topic_name" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add pipelineid when column not exists -->
 	<changeSet id="dcd66c2d-89a0-4ef4-9730-c64b07892eab" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -351,7 +351,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="pipelineid" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify pipelineid when column exists -->
     <changeSet id="a381b543-2205-4d95-b2db-09e01f5c2af5" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -367,7 +367,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="pipelineid" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add status when column not exists -->
 	<changeSet id="1a022eb5-9692-43c4-be64-68c3d17a0ab2" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -387,7 +387,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="status" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify status when column exists -->
     <changeSet id="025c646e-b773-4273-967b-320ff1fe84b5" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -403,7 +403,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="status" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add success_count when column not exists -->
 	<changeSet id="e898d554-aa6a-42b4-8f8d-756262391db4" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -423,7 +423,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="success_count" type="${number.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify success_count when column exists -->
     <changeSet id="279c01a9-adbe-44f6-8459-b373f43a1bb9" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -439,7 +439,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="success_count" newDataType="${number.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add aggregate_assist_ when column not exists -->
 	<changeSet id="2bd3d4ac-fb64-4734-844f-98d08b3e2a73" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -459,7 +459,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="aggregate_assist_" type="${aggregate-assist-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify aggregate_assist_ when column exists -->
     <changeSet id="b5b872cb-52a9-4d2e-9ab0-761fcc4420f0" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -475,7 +475,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="aggregate_assist_" newDataType="${aggregate-assist-column.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add version_ when column not exists -->
 	<changeSet id="c3718d3e-ac91-4214-92a8-2dcbc72e83ef" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -495,7 +495,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="version_" type="${version-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify version_ when column exists -->
     <changeSet id="292b683d-35e0-4898-9159-226efa5d8fbd" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -511,7 +511,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="version_" newDataType="${version-column.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add tenant_id_ when column not exists -->
 	<changeSet id="5858ca07-482d-4716-9cca-32c90651a323" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -531,7 +531,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="tenant_id_" type="${tenant-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify tenant_id_ when column exists -->
     <changeSet id="faa23aba-d988-4af4-8413-3e60e956ea91" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -547,7 +547,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="tenant_id_" newDataType="${tenant-column.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add insert_time_ when column not exists -->
 	<changeSet id="960b21fd-429b-40f3-8453-cceb4fb35c71" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -567,7 +567,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="insert_time_" type="${audit-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify insert_time_ when column exists -->
     <changeSet id="819792e6-07f7-4fc4-b4c7-0b991dd463d3" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -583,7 +583,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="insert_time_" newDataType="${audit-column.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add update_time_ when column not exists -->
 	<changeSet id="2f4b31be-869f-42d7-a3ca-f6b5ef06859c" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -603,7 +603,7 @@
         <addColumn tableName="topic_pipeline_monitor_summary">
         	<column name="update_time_" type="${audit-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify update_time_ when column exists -->
     <changeSet id="86248ed9-b587-41b1-a6a4-0228e79195e8" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -619,7 +619,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_pipeline_monitor_summary" columnName="update_time_" newDataType="${audit-column.type}"/>
-    </changSet>
+    </changeSet>
 	
 	<!-- drop exists indexes and add new indexes -->
 	<changeSet id="3efa7977-8542-4a50-97a8-3a2098842d9d" author="watchmen">
@@ -642,7 +642,7 @@
 				END LOOP;
 			END;
 		</createProcedure>
-		<createProcedure dbms="mysql" procedureName="SCHEMA_CHANGE">
+		<createProcedure dbms="mysql" procedureName="SCHEMA_CHANGE"><![CDATA[
 			DELIMITER $$
 			CREATE PROCEDURE SCHEMA_CHANGE() 
 			BEGIN 
@@ -656,7 +656,7 @@
 					SELECT INDEX_NAME INTO @indexName FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_pipeline_monitor_summary' AND INDEX_NAME <> 'PRIMARY' LIMIT 1;
 				END WHILE;
 			END $$
-			DELIMITER ;
+			DELIMITER ;]]>
 		</createProcedure>
 		<sql dbms="oracle">CALL SCHEMA_CHANGE();</sql>
 		<sql dbms="mysql">CALL `SCHEMA_CHANGE`();</sql>
@@ -665,13 +665,13 @@
 	<changeSet id="12b27606-941a-4f75-9750-f2787a0f92fb" author="watchmen">
 
 
-		<createIndex indexName="i_pipeline_monitor_summary_tenant_id_" table="topic_pipeline_monitor_summary">
+		<createIndex indexName="i_pipeline_monitor_summary_tenant_id_" tableName="topic_pipeline_monitor_summary">
 			<column name="tenant_id_"/>
 		</createIndex>
-		<createIndex indexName="i_pipeline_monitor_summary_insert_time_" table="topic_pipeline_monitor_summary">
+		<createIndex indexName="i_pipeline_monitor_summary_insert_time_" tableName="topic_pipeline_monitor_summary">
 			<column name="insert_time_"/>
 		</createIndex>
-		<createIndex indexName="i_pipeline_monitor_summary_update_time_" table="topic_pipeline_monitor_summary">
+		<createIndex indexName="i_pipeline_monitor_summary_update_time_" tableName="topic_pipeline_monitor_summary">
 			<column name="update_time_"/>
 		</createIndex>
 	</changeSet>

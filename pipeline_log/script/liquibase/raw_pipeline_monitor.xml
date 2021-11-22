@@ -168,7 +168,7 @@
         <addColumn tableName="topic_raw_pipeline_monitor">
         	<column name="pipelineid" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify pipelineid when column exists -->
     <changeSet id="e742a878-eb89-428c-9c9c-333004c3aed5" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -184,7 +184,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_raw_pipeline_monitor" columnName="pipelineid" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add status when column not exists -->
 	<changeSet id="568a2d90-4f34-48f9-9f0f-9302a501af21" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -204,7 +204,7 @@
         <addColumn tableName="topic_raw_pipeline_monitor">
         	<column name="status" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify status when column exists -->
     <changeSet id="eec6d6de-fcf3-49aa-b87b-181bc5ebf7a4" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -220,7 +220,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_raw_pipeline_monitor" columnName="status" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add topicid when column not exists -->
 	<changeSet id="abb080ce-2e6b-4ac0-a66a-ae360bc7ec64" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -240,7 +240,7 @@
         <addColumn tableName="topic_raw_pipeline_monitor">
         	<column name="topicid" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify topicid when column exists -->
     <changeSet id="da88f457-f0df-4613-b5a4-f6c95a374ebc" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -256,7 +256,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_raw_pipeline_monitor" columnName="topicid" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add traceid when column not exists -->
 	<changeSet id="b628ef0b-8d0c-4746-afc1-7494efbab549" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -276,7 +276,7 @@
         <addColumn tableName="topic_raw_pipeline_monitor">
         	<column name="traceid" type="${text.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify traceid when column exists -->
     <changeSet id="51ef3ea3-2ab4-4d2b-a287-08b1198ac2cd" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -292,7 +292,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_raw_pipeline_monitor" columnName="traceid" newDataType="${text.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add data_ when column not exists -->
 	<changeSet id="3c4f4c98-4b3e-43b0-a742-f2b60c017925" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -312,7 +312,7 @@
         <addColumn tableName="topic_raw_pipeline_monitor">
         	<column name="data_" type="${json-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify data_ when column exists -->
     <changeSet id="ee58703f-1bb3-4f79-b024-e66d564a447e" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -328,7 +328,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_raw_pipeline_monitor" columnName="data_" newDataType="${json-column.type}"/>
-    </changSet>
+    </changeSet>
 
 
 	<!-- add tenant_id_ when column not exists -->
@@ -350,7 +350,7 @@
         <addColumn tableName="topic_raw_pipeline_monitor">
         	<column name="tenant_id_" type="${tenant-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify tenant_id_ when column exists -->
     <changeSet id="ae735044-29f4-4a68-b716-4a5d8868638b" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -366,7 +366,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_raw_pipeline_monitor" columnName="tenant_id_" newDataType="${tenant-column.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add insert_time_ when column not exists -->
 	<changeSet id="b8e5157d-f81c-4f7e-b7c8-8a818a492aaf" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -386,7 +386,7 @@
         <addColumn tableName="topic_raw_pipeline_monitor">
         	<column name="insert_time_" type="${audit-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify insert_time_ when column exists -->
     <changeSet id="7817bc30-3616-4d32-8438-45f5d5528d3f" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -402,7 +402,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_raw_pipeline_monitor" columnName="insert_time_" newDataType="${audit-column.type}"/>
-    </changSet>
+    </changeSet>
 	<!-- add update_time_ when column not exists -->
 	<changeSet id="ed88f26d-7156-422d-ae71-3b11738c53d6" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -422,7 +422,7 @@
         <addColumn tableName="topic_raw_pipeline_monitor">
         	<column name="update_time_" type="${audit-column.type}"/>
 		</addColumn>
-    </changSet>
+    </changeSet>
     <!-- modify update_time_ when column exists -->
     <changeSet id="c0646a98-ae85-4db8-933e-2f8ab2df9258" author="watchmen">
 		<preConditions onFail="MARK_RAN">
@@ -438,7 +438,7 @@
 			</or>
         </preConditions>
         <modifyDataType tableName="topic_raw_pipeline_monitor" columnName="update_time_" newDataType="${audit-column.type}"/>
-    </changSet>
+    </changeSet>
 	
 	<!-- drop exists indexes and add new indexes -->
 	<changeSet id="784210dd-9d90-4dfb-9d02-05e6dbd826e1" author="watchmen">
@@ -461,7 +461,7 @@
 				END LOOP;
 			END;
 		</createProcedure>
-		<createProcedure dbms="mysql" procedureName="SCHEMA_CHANGE">
+		<createProcedure dbms="mysql" procedureName="SCHEMA_CHANGE"><![CDATA[
 			DELIMITER $$
 			CREATE PROCEDURE SCHEMA_CHANGE() 
 			BEGIN 
@@ -475,7 +475,7 @@
 					SELECT INDEX_NAME INTO @indexName FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_raw_pipeline_monitor' AND INDEX_NAME <> 'PRIMARY' LIMIT 1;
 				END WHILE;
 			END $$
-			DELIMITER ;
+			DELIMITER ;]]>
 		</createProcedure>
 		<sql dbms="oracle">CALL SCHEMA_CHANGE();</sql>
 		<sql dbms="mysql">CALL `SCHEMA_CHANGE`();</sql>
@@ -484,13 +484,13 @@
 	<changeSet id="f3bdfc3e-de23-4e9d-857f-8207664d24aa" author="watchmen">
 
 
-		<createIndex indexName="i_raw_pipeline_monitor_tenant_id_" table="topic_raw_pipeline_monitor">
+		<createIndex indexName="i_raw_pipeline_monitor_tenant_id_" tableName="topic_raw_pipeline_monitor">
 			<column name="tenant_id_"/>
 		</createIndex>
-		<createIndex indexName="i_raw_pipeline_monitor_insert_time_" table="topic_raw_pipeline_monitor">
+		<createIndex indexName="i_raw_pipeline_monitor_insert_time_" tableName="topic_raw_pipeline_monitor">
 			<column name="insert_time_"/>
 		</createIndex>
-		<createIndex indexName="i_raw_pipeline_monitor_update_time_" table="topic_raw_pipeline_monitor">
+		<createIndex indexName="i_raw_pipeline_monitor_update_time_" tableName="topic_raw_pipeline_monitor">
 			<column name="update_time_"/>
 		</createIndex>
 	</changeSet>
