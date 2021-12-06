@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<databaseChangeLog  
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+	<property dbms="oracle" name="pk-column.type" value="NUMBER(20)"/>
+	<property dbms="oracle" name="json-column.type" value="CLOB"/>
+	<property dbms="oracle" name="aggregate-assist-column.type" value="VARCHAR2(1024)"/>
+	<property dbms="oracle" name="version-column.type" value="NUMBER(8)"/>
+	<property dbms="oracle" name="tenant-column.type" value="VARCHAR2(32)"/>
+	<property dbms="oracle" name="audit-column.type" value="DATE"/>
+	<property dbms="oracle" name="sequence.type" value="NUMBER(30)"/>
+	<property dbms="oracle" name="number.type" value="NUMBER(32,6)"/>
+	<property dbms="oracle" name="unsigned.type" value="NUMBER(32,6)"/>
+	<property dbms="oracle" name="text.type" value="VARCHAR2(255)"/>
+	<property dbms="oracle" name="address.type" value="VARCHAR2(1024)"/>
+	<property dbms="oracle" name="continent.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="region.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="country.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="province.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="city.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="district.type" value="VARCHAR2(255)"/>
+	<property dbms="oracle" name="road.type" value="VARCHAR2(255)"/>
+	<property dbms="oracle" name="community.type" value="VARCHAR2(100)"/>
+	<property dbms="oracle" name="floor.type" value="NUMBER(5)"/>
+	<property dbms="oracle" name="residence-type.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="residential-area.type" value="NUMBER(10,2)"/>
+	<property dbms="oracle" name="email.type" value="VARCHAR2(100)"/>
+	<property dbms="oracle" name="phone.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="mobile.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="fax.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="datetime.type" value="DATE"/>
+	<property dbms="oracle" name="full-datetime.type" value="DATE"/>
+	<property dbms="oracle" name="date.type" value="DATE"/>
+	<property dbms="oracle" name="time.type" value="DATE"/>
+	<property dbms="oracle" name="year.type" value="NUMBER(5)"/>
+	<property dbms="oracle" name="half-year.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="quarter.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="half-month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="ten-days.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="week-of-year.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="week-of-month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="half-week.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="day-of-month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="day-of-week.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="day-kind.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="hour.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="hour-kind.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="minute.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="second.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="millisecond.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="am-pm.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="gender.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="occupation.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="date-of-birth.type" value="DATE"/>
+	<property dbms="oracle" name="age.type" value="NUMBER(5)"/>
+	<property dbms="oracle" name="id-no.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="religion.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="nationality.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="biz-trade.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="biz-scale.type" value="NUMBER(9)"/>
+	<property dbms="oracle" name="boolean.type" value="VARCHAR2(5)"/>
+	<property dbms="oracle" name="enum.type" value="VARCHAR2(20)"/>
+	<property dbms="oracle" name="object.type" value="CLOB"/>
+	<property dbms="oracle" name="array.type" value="CLOB"/>
+	<property dbms="mysql" name="pk-column.type" value="BIGINT"/>
+	<property dbms="mysql" name="json-column.type" value="JSON"/>
+	<property dbms="mysql" name="aggregate-assist-column.type" value="JSON"/>
+	<property dbms="mysql" name="version-column.type" value="INT"/>
+	<property dbms="mysql" name="tenant-column.type" value="VARCHAR(32)"/>
+	<property dbms="mysql" name="audit-column.type" value="DATETIME"/>
+	<property dbms="mysql" name="sequence.type" value="BIGINT"/>
+	<property dbms="mysql" name="number.type" value="DECIMAL(32,6)"/>
+	<property dbms="mysql" name="unsigned.type" value="DECIMAL(32,6)"/>
+	<property dbms="mysql" name="text.type" value="VARCHAR(255)"/>
+	<property dbms="mysql" name="address.type" value="TEXT"/>
+	<property dbms="mysql" name="continent.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="region.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="country.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="province.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="city.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="district.type" value="VARCHAR(255)"/>
+	<property dbms="mysql" name="road.type" value="VARCHAR(255)"/>
+	<property dbms="mysql" name="community.type" value="VARCHAR(100)"/>
+	<property dbms="mysql" name="floor.type" value="SMALLINT"/>
+	<property dbms="mysql" name="residence-type.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="residential-area.type" value="DECIMAL(10,2)"/>
+	<property dbms="mysql" name="email.type" value="VARCHAR(100)"/>
+	<property dbms="mysql" name="phone.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="mobile.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="fax.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="datetime.type" value="DATETIME"/>
+	<property dbms="mysql" name="full-datetime.type" value="DATETIME"/>
+	<property dbms="mysql" name="date.type" value="DATE"/>
+	<property dbms="mysql" name="time.type" value="TIME"/>
+	<property dbms="mysql" name="year.type" value="SMALLINT"/>
+	<property dbms="mysql" name="half-year.type" value="TINYINT"/>
+	<property dbms="mysql" name="quarter.type" value="TINYINT"/>
+	<property dbms="mysql" name="month.type" value="TINYINT"/>
+	<property dbms="mysql" name="half-month.type" value="TINYINT"/>
+	<property dbms="mysql" name="ten-days.type" value="TINYINT"/>
+	<property dbms="mysql" name="week-of-year.type" value="TINYINT"/>
+	<property dbms="mysql" name="week-of-month.type" value="TINYINT"/>
+	<property dbms="mysql" name="half-week.type" value="TINYINT"/>
+	<property dbms="mysql" name="day-of-month.type" value="TINYINT"/>
+	<property dbms="mysql" name="day-of-week.type" value="TINYINT"/>
+	<property dbms="mysql" name="day-kind.type" value="TINYINT"/>
+	<property dbms="mysql" name="hour.type" value="TINYINT"/>
+	<property dbms="mysql" name="hour-kind.type" value="TINYINT"/>
+	<property dbms="mysql" name="minute.type" value="TINYINT"/>
+	<property dbms="mysql" name="second.type" value="TINYINT"/>
+	<property dbms="mysql" name="millisecond.type" value="TINYINT"/>
+	<property dbms="mysql" name="am-pm.type" value="TINYINT"/>
+	<property dbms="mysql" name="gender.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="occupation.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="date-of-birth.type" value="DATE"/>
+	<property dbms="mysql" name="age.type" value="SMALLINT"/>
+	<property dbms="mysql" name="id-no.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="religion.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="nationality.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="biz-trade.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="biz-scale.type" value="INT"/>
+	<property dbms="mysql" name="boolean.type" value="VARCHAR(5)"/>
+	<property dbms="mysql" name="enum.type" value="VARCHAR(20)"/>
+	<property dbms="mysql" name="object.type" value="JSON"/>
+	<property dbms="mysql" name="array.type" value="JSON"/>
+	<changeSet id="4c6d2b00-e188-4c6f-8c95-d992132c9948" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="topic_system_rule_result"/>
+			</not>
+        </preConditions>
+        <createTable tableName="topic_system_rule_result">
+			<column name="id_" type="${pk-column.type}">
+				<constraints primaryKey="true"/>
+			</column>
+			<column name="factorid" type="${text.type}"/>
+			<column name="factorname" type="${text.type}"/>
+			<column name="result" type="${boolean.type}"/>
+			<column name="rulecode" type="${text.type}"/>
+			<column name="severity" type="${text.type}"/>
+			<column name="topicid" type="${text.type}"/>
+			<column name="topicname" type="${text.type}"/>
+
+
+			<column name="tenant_id_" type="${tenant-column.type}"/>
+			<column name="insert_time_" type="${audit-column.type}"/>
+			<column name="update_time_" type="${audit-column.type}"/>
+        </createTable>
+	</changeSet>
+	
+	<!-- add or modify columns -->
+	<!-- add factorid when column not exists -->
+	<changeSet id="c829a4ef-f7ed-48e1-9b17-5ecc0ac746e3" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'factorid'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'factorid'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="factorid" type="${text.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify factorid when column exists -->
+    <changeSet id="3842da95-1b05-40cb-ba85-408b30fa4d06" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'factorid'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'factorid'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="factorid" newDataType="${text.type}"/>
+    </changeSet>
+	<!-- add factorname when column not exists -->
+	<changeSet id="30a9731a-2b03-4a8c-82d4-3fcb43a88ed2" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'factorname'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'factorname'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="factorname" type="${text.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify factorname when column exists -->
+    <changeSet id="0aecb3ca-1293-43c5-ac3f-13ed94a206bf" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'factorname'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'factorname'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="factorname" newDataType="${text.type}"/>
+    </changeSet>
+	<!-- add result when column not exists -->
+	<changeSet id="152092d4-f128-4125-a2ed-e93b5e945843" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'result'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'result'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="result" type="${boolean.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify result when column exists -->
+    <changeSet id="6177bf20-5c6c-4f3a-a126-acdf7caf122f" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'result'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'result'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="result" newDataType="${boolean.type}"/>
+    </changeSet>
+	<!-- add rulecode when column not exists -->
+	<changeSet id="fe558232-ff96-4f7a-9635-eeb3bce6fbba" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'rulecode'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'rulecode'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="rulecode" type="${text.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify rulecode when column exists -->
+    <changeSet id="8c2fc811-6af0-4d0b-b89f-a9847d94bed5" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'rulecode'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'rulecode'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="rulecode" newDataType="${text.type}"/>
+    </changeSet>
+	<!-- add severity when column not exists -->
+	<changeSet id="0696bda9-6feb-410c-987f-61773bb54097" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'severity'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'severity'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="severity" type="${text.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify severity when column exists -->
+    <changeSet id="831f6894-298d-40b7-b0c0-9e23964779d5" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'severity'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'severity'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="severity" newDataType="${text.type}"/>
+    </changeSet>
+	<!-- add topicid when column not exists -->
+	<changeSet id="6d7e0b55-511e-4648-8b88-2bc19ea9575f" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'topicid'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'topicid'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="topicid" type="${text.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify topicid when column exists -->
+    <changeSet id="358a0191-a849-4bb0-84bd-e1765937cc92" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'topicid'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'topicid'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="topicid" newDataType="${text.type}"/>
+    </changeSet>
+	<!-- add topicname when column not exists -->
+	<changeSet id="303b1c00-3343-44bb-a721-e42501378f57" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'topicname'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'topicname'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="topicname" type="${text.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify topicname when column exists -->
+    <changeSet id="8d1c34b7-5cbc-4152-bde9-a6935e7c90f4" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'topicname'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'topicname'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="topicname" newDataType="${text.type}"/>
+    </changeSet>
+
+
+	<!-- add tenant_id_ when column not exists -->
+	<changeSet id="282921e4-5317-41dc-b869-21b5b8625ec6" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="tenant_id_" type="${tenant-column.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify tenant_id_ when column exists -->
+    <changeSet id="8c595edb-6039-4b0a-95f0-b80df97854ee" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="tenant_id_" newDataType="${tenant-column.type}"/>
+    </changeSet>
+	<!-- add insert_time_ when column not exists -->
+	<changeSet id="2490a318-fecf-4c0d-a610-27a630f5696a" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="insert_time_" type="${audit-column.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify insert_time_ when column exists -->
+    <changeSet id="ca6cbb5b-fb4f-48d5-be36-26929fbf5f75" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="insert_time_" newDataType="${audit-column.type}"/>
+    </changeSet>
+	<!-- add update_time_ when column not exists -->
+	<changeSet id="faa91450-0508-4f3f-9107-62ceb0c02a9f" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_system_rule_result">
+        	<column name="update_time_" type="${audit-column.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify update_time_ when column exists -->
+    <changeSet id="3887336a-c7b8-43ad-81d4-ecab2a19de9f" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_system_rule_result' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_system_rule_result" columnName="update_time_" newDataType="${audit-column.type}"/>
+    </changeSet>
+	
+	<!-- drop exists indexes and add new indexes -->
+	<changeSet id="23a76f4a-b2f5-4fe0-b30b-203d92c06093" author="watchmen">
+		<!-- simply change the following sql of pre-conditions to "SELECT 0 FROM DUAL" to drop all exists indexes. -->
+		<!-- considering performance of rebuild indexes, manually drop useless indexes accurate is recommended. -->
+		<!-- according to duplication check of index names, following create scripts need to be adjusted manually as well. -->
+		<preConditions onFail="MARK_RAN">
+			<sqlCheck expectedResult="0">SELECT 1 FROM DUAL</sqlCheck>
+		</preConditions>
+		<createProcedure dbms="oracle" procedureName="SCHEMA_CHANGE">
+			CREATE OR REPLACE PROCEDURE SCHEMA_CHANGE AS
+				CURSOR cursorIndexes IS SELECT UI.INDEX_NAME
+					FROM USER_INDEXES UI
+					WHERE UI.TABLE_NAME = 'topic_system_rule_result'
+                        AND NOT EXISTS (SELECT 1 FROM USER_CONSTRAINTS WHERE TABLE_NAME = 'topic_system_rule_result' AND CONSTRAINT_TYPE = 'P' AND CONSTRAINT_NAME = UI.INDEX_NAME);
+			BEGIN
+				-- drop existed indexes
+				FOR anIndex in cursorIndexes LOOP
+					EXECUTE IMMEDIATE CONCAT('DROP INDEX ', anIndex.INDEX_NAME);
+				END LOOP;
+			END;
+		</createProcedure>
+		<createProcedure dbms="mysql" procedureName="SCHEMA_CHANGE"><![CDATA[
+			DELIMITER $$
+			CREATE PROCEDURE SCHEMA_CHANGE() 
+			BEGIN 
+				-- drop existed indexes
+				SELECT INDEX_NAME INTO @indexName FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND INDEX_NAME <> 'PRIMARY' LIMIT 1;
+				WHILE @indexName IS NOT NULL DO
+				    SET @sql = concat('DROP INDEX ', @indexName, ' ON topic_system_rule_result;');
+					PREPARE stmt FROM @sql;
+					EXECUTE stmt;
+					DEALLOCATE PREPARE stmt;
+					SELECT INDEX_NAME INTO @indexName FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_system_rule_result' AND INDEX_NAME <> 'PRIMARY' LIMIT 1;
+				END WHILE;
+			END $$
+			DELIMITER ;
+		]]></createProcedure>
+		<sql dbms="oracle">CALL SCHEMA_CHANGE();</sql>
+		<sql dbms="mysql">CALL `SCHEMA_CHANGE`();</sql>
+		<dropProcedure procedureName="SCHEMA_CHANGE"/>
+	</changeSet>
+	<changeSet id="b2a17aea-e3c9-4d20-befa-9789e2139ce1" author="watchmen">
+
+
+		<createIndex indexName="i_system_rule_result_tenant_id_" tableName="topic_system_rule_result">
+			<column name="tenant_id_"/>
+		</createIndex>
+		<createIndex indexName="i_system_rule_result_insert_time_" tableName="topic_system_rule_result">
+			<column name="insert_time_"/>
+		</createIndex>
+		<createIndex indexName="i_system_rule_result_update_time_" tableName="topic_system_rule_result">
+			<column name="update_time_"/>
+		</createIndex>
+	</changeSet>
+</databaseChangeLog>

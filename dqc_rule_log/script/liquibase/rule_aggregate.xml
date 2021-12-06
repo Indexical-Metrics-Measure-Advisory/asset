@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<databaseChangeLog  
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+	<property dbms="oracle" name="pk-column.type" value="NUMBER(20)"/>
+	<property dbms="oracle" name="json-column.type" value="CLOB"/>
+	<property dbms="oracle" name="aggregate-assist-column.type" value="VARCHAR2(1024)"/>
+	<property dbms="oracle" name="version-column.type" value="NUMBER(8)"/>
+	<property dbms="oracle" name="tenant-column.type" value="VARCHAR2(32)"/>
+	<property dbms="oracle" name="audit-column.type" value="DATE"/>
+	<property dbms="oracle" name="sequence.type" value="NUMBER(30)"/>
+	<property dbms="oracle" name="number.type" value="NUMBER(32,6)"/>
+	<property dbms="oracle" name="unsigned.type" value="NUMBER(32,6)"/>
+	<property dbms="oracle" name="text.type" value="VARCHAR2(255)"/>
+	<property dbms="oracle" name="address.type" value="VARCHAR2(1024)"/>
+	<property dbms="oracle" name="continent.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="region.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="country.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="province.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="city.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="district.type" value="VARCHAR2(255)"/>
+	<property dbms="oracle" name="road.type" value="VARCHAR2(255)"/>
+	<property dbms="oracle" name="community.type" value="VARCHAR2(100)"/>
+	<property dbms="oracle" name="floor.type" value="NUMBER(5)"/>
+	<property dbms="oracle" name="residence-type.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="residential-area.type" value="NUMBER(10,2)"/>
+	<property dbms="oracle" name="email.type" value="VARCHAR2(100)"/>
+	<property dbms="oracle" name="phone.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="mobile.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="fax.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="datetime.type" value="DATE"/>
+	<property dbms="oracle" name="full-datetime.type" value="DATE"/>
+	<property dbms="oracle" name="date.type" value="DATE"/>
+	<property dbms="oracle" name="time.type" value="DATE"/>
+	<property dbms="oracle" name="year.type" value="NUMBER(5)"/>
+	<property dbms="oracle" name="half-year.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="quarter.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="half-month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="ten-days.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="week-of-year.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="week-of-month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="half-week.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="day-of-month.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="day-of-week.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="day-kind.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="hour.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="hour-kind.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="minute.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="second.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="millisecond.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="am-pm.type" value="NUMBER(3)"/>
+	<property dbms="oracle" name="gender.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="occupation.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="date-of-birth.type" value="DATE"/>
+	<property dbms="oracle" name="age.type" value="NUMBER(5)"/>
+	<property dbms="oracle" name="id-no.type" value="VARCHAR2(64)"/>
+	<property dbms="oracle" name="religion.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="nationality.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="biz-trade.type" value="VARCHAR2(10)"/>
+	<property dbms="oracle" name="biz-scale.type" value="NUMBER(9)"/>
+	<property dbms="oracle" name="boolean.type" value="VARCHAR2(5)"/>
+	<property dbms="oracle" name="enum.type" value="VARCHAR2(20)"/>
+	<property dbms="oracle" name="object.type" value="CLOB"/>
+	<property dbms="oracle" name="array.type" value="CLOB"/>
+	<property dbms="mysql" name="pk-column.type" value="BIGINT"/>
+	<property dbms="mysql" name="json-column.type" value="JSON"/>
+	<property dbms="mysql" name="aggregate-assist-column.type" value="JSON"/>
+	<property dbms="mysql" name="version-column.type" value="INT"/>
+	<property dbms="mysql" name="tenant-column.type" value="VARCHAR(32)"/>
+	<property dbms="mysql" name="audit-column.type" value="DATETIME"/>
+	<property dbms="mysql" name="sequence.type" value="BIGINT"/>
+	<property dbms="mysql" name="number.type" value="DECIMAL(32,6)"/>
+	<property dbms="mysql" name="unsigned.type" value="DECIMAL(32,6)"/>
+	<property dbms="mysql" name="text.type" value="VARCHAR(255)"/>
+	<property dbms="mysql" name="address.type" value="TEXT"/>
+	<property dbms="mysql" name="continent.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="region.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="country.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="province.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="city.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="district.type" value="VARCHAR(255)"/>
+	<property dbms="mysql" name="road.type" value="VARCHAR(255)"/>
+	<property dbms="mysql" name="community.type" value="VARCHAR(100)"/>
+	<property dbms="mysql" name="floor.type" value="SMALLINT"/>
+	<property dbms="mysql" name="residence-type.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="residential-area.type" value="DECIMAL(10,2)"/>
+	<property dbms="mysql" name="email.type" value="VARCHAR(100)"/>
+	<property dbms="mysql" name="phone.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="mobile.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="fax.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="datetime.type" value="DATETIME"/>
+	<property dbms="mysql" name="full-datetime.type" value="DATETIME"/>
+	<property dbms="mysql" name="date.type" value="DATE"/>
+	<property dbms="mysql" name="time.type" value="TIME"/>
+	<property dbms="mysql" name="year.type" value="SMALLINT"/>
+	<property dbms="mysql" name="half-year.type" value="TINYINT"/>
+	<property dbms="mysql" name="quarter.type" value="TINYINT"/>
+	<property dbms="mysql" name="month.type" value="TINYINT"/>
+	<property dbms="mysql" name="half-month.type" value="TINYINT"/>
+	<property dbms="mysql" name="ten-days.type" value="TINYINT"/>
+	<property dbms="mysql" name="week-of-year.type" value="TINYINT"/>
+	<property dbms="mysql" name="week-of-month.type" value="TINYINT"/>
+	<property dbms="mysql" name="half-week.type" value="TINYINT"/>
+	<property dbms="mysql" name="day-of-month.type" value="TINYINT"/>
+	<property dbms="mysql" name="day-of-week.type" value="TINYINT"/>
+	<property dbms="mysql" name="day-kind.type" value="TINYINT"/>
+	<property dbms="mysql" name="hour.type" value="TINYINT"/>
+	<property dbms="mysql" name="hour-kind.type" value="TINYINT"/>
+	<property dbms="mysql" name="minute.type" value="TINYINT"/>
+	<property dbms="mysql" name="second.type" value="TINYINT"/>
+	<property dbms="mysql" name="millisecond.type" value="TINYINT"/>
+	<property dbms="mysql" name="am-pm.type" value="TINYINT"/>
+	<property dbms="mysql" name="gender.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="occupation.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="date-of-birth.type" value="DATE"/>
+	<property dbms="mysql" name="age.type" value="SMALLINT"/>
+	<property dbms="mysql" name="id-no.type" value="VARCHAR(50)"/>
+	<property dbms="mysql" name="religion.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="nationality.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="biz-trade.type" value="VARCHAR(10)"/>
+	<property dbms="mysql" name="biz-scale.type" value="INT"/>
+	<property dbms="mysql" name="boolean.type" value="VARCHAR(5)"/>
+	<property dbms="mysql" name="enum.type" value="VARCHAR(20)"/>
+	<property dbms="mysql" name="object.type" value="JSON"/>
+	<property dbms="mysql" name="array.type" value="JSON"/>
+	<changeSet id="f15abc2c-ca8a-4fb7-bf55-7895491f4510" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<tableExists tableName="topic_rule_aggregate"/>
+			</not>
+        </preConditions>
+        <createTable tableName="topic_rule_aggregate">
+			<column name="id_" type="${pk-column.type}">
+				<constraints primaryKey="true"/>
+			</column>
+			<column name="count" type="${number.type}"/>
+			<column name="factorid" type="${text.type}"/>
+			<column name="rulecode" type="${text.type}"/>
+			<column name="topicid" type="${text.type}"/>
+			<column name="aggregate_assist_" type="${aggregate-assist-column.type}"/>
+			<column name="version_" type="${version-column.type}"/>
+			<column name="tenant_id_" type="${tenant-column.type}"/>
+			<column name="insert_time_" type="${audit-column.type}"/>
+			<column name="update_time_" type="${audit-column.type}"/>
+        </createTable>
+	</changeSet>
+	
+	<!-- add or modify columns -->
+	<!-- add count when column not exists -->
+	<changeSet id="cc21cb32-fb13-46b6-b590-9210021d1486" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'count'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'count'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_rule_aggregate">
+        	<column name="count" type="${number.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify count when column exists -->
+    <changeSet id="2bba34c9-d18e-434b-af8c-ca2b3a5e6859" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'count'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'count'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_rule_aggregate" columnName="count" newDataType="${number.type}"/>
+    </changeSet>
+	<!-- add factorid when column not exists -->
+	<changeSet id="f226b36b-8924-406c-9245-90e7a2589202" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'factorid'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'factorid'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_rule_aggregate">
+        	<column name="factorid" type="${text.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify factorid when column exists -->
+    <changeSet id="dc2cd62f-14a1-4e4e-85fd-0440dfae631e" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'factorid'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'factorid'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_rule_aggregate" columnName="factorid" newDataType="${text.type}"/>
+    </changeSet>
+	<!-- add rulecode when column not exists -->
+	<changeSet id="9953ab43-3bd5-4a55-ab30-5ce0bbe1ae50" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'rulecode'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'rulecode'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_rule_aggregate">
+        	<column name="rulecode" type="${text.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify rulecode when column exists -->
+    <changeSet id="1be5790d-fa9b-467b-9346-99528d387fdf" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'rulecode'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'rulecode'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_rule_aggregate" columnName="rulecode" newDataType="${text.type}"/>
+    </changeSet>
+	<!-- add topicid when column not exists -->
+	<changeSet id="31a8ed9f-f170-4a34-bbb9-72864b3d97c1" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'topicid'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'topicid'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_rule_aggregate">
+        	<column name="topicid" type="${text.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify topicid when column exists -->
+    <changeSet id="bb252937-a024-416c-8ff8-07c48f601ca8" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'topicid'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'topicid'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_rule_aggregate" columnName="topicid" newDataType="${text.type}"/>
+    </changeSet>
+	<!-- add aggregate_assist_ when column not exists -->
+	<changeSet id="4f88fecf-945a-4951-b0da-57992ab7adb8" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'aggregate_assist_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'aggregate_assist_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_rule_aggregate">
+        	<column name="aggregate_assist_" type="${aggregate-assist-column.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify aggregate_assist_ when column exists -->
+    <changeSet id="092824f5-f1cf-4bd7-84ec-5bfe9ccd9f77" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'aggregate_assist_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'aggregate_assist_'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_rule_aggregate" columnName="aggregate_assist_" newDataType="${aggregate-assist-column.type}"/>
+    </changeSet>
+	<!-- add version_ when column not exists -->
+	<changeSet id="e51e5ade-982b-476d-bda0-20763e2169ce" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'version_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'version_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_rule_aggregate">
+        	<column name="version_" type="${version-column.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify version_ when column exists -->
+    <changeSet id="0e694c2b-b3df-4c5c-89d3-0946bb80517c" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'version_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'version_'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_rule_aggregate" columnName="version_" newDataType="${version-column.type}"/>
+    </changeSet>
+	<!-- add tenant_id_ when column not exists -->
+	<changeSet id="e43c6dda-b555-45ee-834e-081fb94e9524" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_rule_aggregate">
+        	<column name="tenant_id_" type="${tenant-column.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify tenant_id_ when column exists -->
+    <changeSet id="1f55cf34-9256-4347-b3f5-7a7450c4533b" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'tenant_id_'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_rule_aggregate" columnName="tenant_id_" newDataType="${tenant-column.type}"/>
+    </changeSet>
+	<!-- add insert_time_ when column not exists -->
+	<changeSet id="2dc2c418-ee5b-4f4e-a1c5-0aaee71c7551" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_rule_aggregate">
+        	<column name="insert_time_" type="${audit-column.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify insert_time_ when column exists -->
+    <changeSet id="90187162-818a-438c-b0a1-685f9cb2ce4e" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'insert_time_'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_rule_aggregate" columnName="insert_time_" newDataType="${audit-column.type}"/>
+    </changeSet>
+	<!-- add update_time_ when column not exists -->
+	<changeSet id="8fe7f132-2d93-47f7-abd6-d868d79e9645" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+			</or>
+			<or>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="0">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+			</or>
+       </preConditions>
+        <addColumn tableName="topic_rule_aggregate">
+        	<column name="update_time_" type="${audit-column.type}"/>
+		</addColumn>
+    </changeSet>
+    <!-- modify update_time_ when column exists -->
+    <changeSet id="76fe5b1a-b826-4602-9b8a-bf5661a6acf4" author="watchmen">
+		<preConditions onFail="MARK_RAN">
+			<or>
+				<and>
+					<dbms type="mysql"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+				<and>
+					<dbms type="oracle"/>
+					<sqlCheck expectedResult="1">SELECT COUNT(1) FROM USER_TAB_COLUMNS WHERE TABLE_NAME = 'topic_rule_aggregate' AND COLUMN_NAME = 'update_time_'</sqlCheck>
+				</and>
+			</or>
+        </preConditions>
+        <modifyDataType tableName="topic_rule_aggregate" columnName="update_time_" newDataType="${audit-column.type}"/>
+    </changeSet>
+	
+	<!-- drop exists indexes and add new indexes -->
+	<changeSet id="7ea07124-7fbf-4b87-ae53-4968195cddb0" author="watchmen">
+		<!-- simply change the following sql of pre-conditions to "SELECT 0 FROM DUAL" to drop all exists indexes. -->
+		<!-- considering performance of rebuild indexes, manually drop useless indexes accurate is recommended. -->
+		<!-- according to duplication check of index names, following create scripts need to be adjusted manually as well. -->
+		<preConditions onFail="MARK_RAN">
+			<sqlCheck expectedResult="0">SELECT 1 FROM DUAL</sqlCheck>
+		</preConditions>
+		<createProcedure dbms="oracle" procedureName="SCHEMA_CHANGE">
+			CREATE OR REPLACE PROCEDURE SCHEMA_CHANGE AS
+				CURSOR cursorIndexes IS SELECT UI.INDEX_NAME
+					FROM USER_INDEXES UI
+					WHERE UI.TABLE_NAME = 'topic_rule_aggregate'
+                        AND NOT EXISTS (SELECT 1 FROM USER_CONSTRAINTS WHERE TABLE_NAME = 'topic_rule_aggregate' AND CONSTRAINT_TYPE = 'P' AND CONSTRAINT_NAME = UI.INDEX_NAME);
+			BEGIN
+				-- drop existed indexes
+				FOR anIndex in cursorIndexes LOOP
+					EXECUTE IMMEDIATE CONCAT('DROP INDEX ', anIndex.INDEX_NAME);
+				END LOOP;
+			END;
+		</createProcedure>
+		<createProcedure dbms="mysql" procedureName="SCHEMA_CHANGE"><![CDATA[
+			DELIMITER $$
+			CREATE PROCEDURE SCHEMA_CHANGE() 
+			BEGIN 
+				-- drop existed indexes
+				SELECT INDEX_NAME INTO @indexName FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND INDEX_NAME <> 'PRIMARY' LIMIT 1;
+				WHILE @indexName IS NOT NULL DO
+				    SET @sql = concat('DROP INDEX ', @indexName, ' ON topic_rule_aggregate;');
+					PREPARE stmt FROM @sql;
+					EXECUTE stmt;
+					DEALLOCATE PREPARE stmt;
+					SELECT INDEX_NAME INTO @indexName FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'topic_rule_aggregate' AND INDEX_NAME <> 'PRIMARY' LIMIT 1;
+				END WHILE;
+			END $$
+			DELIMITER ;
+		]]></createProcedure>
+		<sql dbms="oracle">CALL SCHEMA_CHANGE();</sql>
+		<sql dbms="mysql">CALL `SCHEMA_CHANGE`();</sql>
+		<dropProcedure procedureName="SCHEMA_CHANGE"/>
+	</changeSet>
+	<changeSet id="eaa7eaa6-0c30-4a09-aa05-f52cc84b5568" author="watchmen">
+
+
+		<createIndex indexName="i_rule_aggregate_tenant_id_" tableName="topic_rule_aggregate">
+			<column name="tenant_id_"/>
+		</createIndex>
+		<createIndex indexName="i_rule_aggregate_insert_time_" tableName="topic_rule_aggregate">
+			<column name="insert_time_"/>
+		</createIndex>
+		<createIndex indexName="i_rule_aggregate_update_time_" tableName="topic_rule_aggregate">
+			<column name="update_time_"/>
+		</createIndex>
+	</changeSet>
+</databaseChangeLog>
